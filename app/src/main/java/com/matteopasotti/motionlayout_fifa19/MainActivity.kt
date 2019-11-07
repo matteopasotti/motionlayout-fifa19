@@ -16,7 +16,10 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
     private var doShowPaths = false
 
     private val dataset: Array<ExampleAdapter.Example> = arrayOf(
-        ExampleAdapter.Example("Scene 1", R.layout.layout_01)
+        ExampleAdapter.Example("Scene 1", R.layout.layout_01),
+        ExampleAdapter.Example("Scene 2", R.layout.layout_02),
+        ExampleAdapter.Example("Scene 3", R.layout.layout_03),
+        ExampleAdapter.Example("Scene 4", R.layout.layout_04)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

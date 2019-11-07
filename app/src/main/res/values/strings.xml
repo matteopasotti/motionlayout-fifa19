@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">motionlayout-fifa19</string>
+    <string name="ronaldo_image">ronaldo_image</string>
+    <string name="cover">cover</string>
 </resources>
