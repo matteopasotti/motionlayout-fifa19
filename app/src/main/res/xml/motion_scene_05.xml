@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@id/start">
+        android:id="@+id/startToMiddle"
+        app:constraintSetEnd="@id/middle"
+        app:constraintSetStart="@id/start"
+        app:duration="1000">
 
         <OnSwipe
             app:dragDirection="dragDown"
@@ -12,6 +14,18 @@
             app:touchAnchorId="@+id/cover"
             app:touchAnchorSide="top"
             app:touchRegionId="@+id/cover"/>
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/middleToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/middle"
+        app:duration="1000">
+
+        <OnClick
+            app:targetId="@id/card_bg"
+            app:clickAction="toggle"/>
 
     </Transition>
 
@@ -41,8 +55,8 @@
 
     </ConstraintSet>
 
-    <!-- END -->
-    <ConstraintSet android:id="@+id/end">
+    <!-- MIDDLE -->
+    <ConstraintSet android:id="@+id/middle">
 
         <Constraint android:id="@+id/cover">
             <Layout
@@ -68,21 +82,38 @@
                 app:layout_constraintVertical_bias="0.3"
                 app:layout_height="300dp"
                 app:layout_width="300dp" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="16dp" />
             <Transform android:rotationX="0" />
         </Constraint>
 
     </ConstraintSet>
 
 
+    <ConstraintSet
+        android:id="@+id/end">
 
+        <Constraint android:id="@+id/card_bg">
+            <Layout
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_height="0dp"
+                app:layout_width="0dp" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+            <Transform app:elevation="8dp" />
+        </Constraint>
 
+        <Constraint android:id="@+id/cover">
+            <PropertySet app:alpha="0" />
+        </Constraint>
+    </ConstraintSet>
 
 </MotionScene>
-
-
-
-
-
 
 
 
