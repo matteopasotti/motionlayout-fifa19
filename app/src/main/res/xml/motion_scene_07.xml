@@ -27,6 +27,32 @@
             app:clickAction="toggle"
             app:targetId="@id/card_player" />
 
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="55"
+                app:motionTarget="@id/first_section_layout" />
+
+            <KeyPosition
+                app:curveFit="linear"
+                app:framePosition="0"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@+id/first_section_layout"
+                app:transitionEasing="decelerate" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="75"
+                app:motionTarget="@id/included_bio_layout" />
+
+            <KeyPosition
+                app:curveFit="linear"
+                app:framePosition="0"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@+id/included_bio_layout"
+                app:transitionEasing="decelerate" />
+        </KeyFrameSet>
+
     </Transition>
 
 
@@ -39,30 +65,33 @@
         </Constraint>
 
         <Constraint android:id="@+id/card_bg">
-
-            <Layout
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.35"
-                app:layout_height="140dp"
-                app:layout_width="140dp" />
-
             <Transform android:rotationX="-55" />
         </Constraint>
 
         <Constraint android:id="@+id/card_player">
-            <Layout
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.35"
-                app:layout_height="140dp"
-                app:layout_width="120dp" />
             <PropertySet app:alpha="0" />
             <Transform android:rotationX="-55" />
+        </Constraint>
+
+        <Constraint android:id="@+id/first_section_layout">
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"/>
+            <PropertySet app:alpha="0"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/included_bio_layout">
+            <Layout
+                app:layout_constraintTop_toBottomOf="@+id/first_section_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"/>
+            <PropertySet app:alpha="0"/>
         </Constraint>
 
     </ConstraintSet>
@@ -113,6 +142,27 @@
                 android:elevation="10dp" />
         </Constraint>
 
+        <Constraint android:id="@+id/first_section_layout">
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"/>
+            <PropertySet app:alpha="0"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/included_bio_layout">
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/first_section_layout"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"/>
+            <PropertySet app:alpha="0"/>
+        </Constraint>
+
     </ConstraintSet>
 
 
@@ -148,6 +198,28 @@
 
         <Constraint android:id="@+id/cover">
             <PropertySet app:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/first_section_layout">
+            <Layout
+                app:layout_constraintTop_toBottomOf="@+id/card_player"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"
+                app:layout_marginTop="10dp"/>
+            <PropertySet app:alpha="1"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/included_bio_layout">
+            <Layout
+                app:layout_constraintTop_toBottomOf="@+id/first_section_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_width="0dp"
+                app:layout_height="wrap_content"
+                app:layout_marginTop="16dp"/>
+            <PropertySet app:alpha="1"/>
         </Constraint>
 
     </ConstraintSet>

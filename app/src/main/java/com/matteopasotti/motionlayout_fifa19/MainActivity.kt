@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
         ExampleAdapter.Example("Scene 3", R.layout.layout_03),
         ExampleAdapter.Example("Scene 4", R.layout.layout_04),
         ExampleAdapter.Example("Scene 5", R.layout.layout_05),
-        ExampleAdapter.Example("Scene 6", R.layout.layout_06)
+        ExampleAdapter.Example("Scene 6", R.layout.layout_06),
+        ExampleAdapter.Example("Scene 7", R.layout.layout_07)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
